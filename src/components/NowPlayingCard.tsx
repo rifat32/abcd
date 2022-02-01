@@ -5,6 +5,7 @@ import FadeIn from 'react-fade-in'
 import Image from 'next/image'
 import SongImage from '@public/img/song.webp'
 import { FaSpotify } from 'react-icons/fa'
+import {link} from "../data/link"
 const { NEXT_PUBLIC_LASTFM_API_KEY } = process.env
 
 export const NowPlayingCard = () => {
@@ -29,7 +30,7 @@ export const NowPlayingCard = () => {
             alt="Song cover art"
             placeholder="blur"
             className="w-full h-full rounded shadow"
-            src={SongImage}
+            src={`${link.link}/img/song.webp`}
           />
         )}
         {lastFM.status === 'playing' && (
