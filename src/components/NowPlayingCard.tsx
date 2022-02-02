@@ -3,10 +3,11 @@ import { useLastFM } from 'use-last-fm'
 import { truncate } from 'lib/utils'
 import FadeIn from 'react-fade-in'
 import Image from 'next/image'
-import SongImage from '@public/img/song.webp'
+
 import { FaSpotify } from 'react-icons/fa'
-import {link} from "../data/link"
+import { link } from 'fs'
 const { NEXT_PUBLIC_LASTFM_API_KEY } = process.env
+import { link as webLink} from "../data/link"
 
 export const NowPlayingCard = () => {
   const lastFM = useLastFM('Kherici', NEXT_PUBLIC_LASTFM_API_KEY!, 5000, 'large')
@@ -30,7 +31,7 @@ export const NowPlayingCard = () => {
             alt="Song cover art"
             placeholder="blur"
             className="w-full h-full rounded shadow"
-            src={`${link.link}/img/song.webp`}
+            src={webLink.songwebp}
           />
         )}
         {lastFM.status === 'playing' && (
